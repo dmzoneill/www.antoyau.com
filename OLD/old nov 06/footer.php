@@ -1,0 +1,6 @@
+
+<?php
+
+bottom_footer();
+
+?>

@@ -1,0 +1,9 @@
+<html>
+<head>
+<title>#title#</title>
+</head>
+<center>
+<body>
+<h3>#name#</h3>
+</body>
+</html>

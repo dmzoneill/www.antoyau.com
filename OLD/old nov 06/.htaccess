@@ -1,0 +1,5 @@
+DirectoryIndex index.html index.php index.htm
+ErrorDocument 401 http://www.antoyau.com/index.php?pagename=404
+ErrorDocument 403 http://www.antoyau.com/index.php?pagename=404
+ErrorDocument 404 http://www.antoyau.com/index.php?pagename=404
+ErrorDocument 500 http://www.antoyau.com/index.php?pagename=404

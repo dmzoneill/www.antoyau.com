@@ -1,0 +1,165 @@
+body{
+margin-left:0;
+margin-top:5;
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+
+}
+
+.nothing {
+border:0;
+}
+
+.treeview ul{ /*CSS for Simple Tree Menu*/
+margin: 0;
+padding: 0;
+font-family:Arial, Helvetica, sans-serif;
+font-size:10px;
+color:#CCCCCC;
+text-align:left;
+}
+
+.sitename {
+font-family:Arial, Helvetica, sans-serif;
+font-size:32px;
+color:#efefef;
+text-align:left;
+padding:0;
+}
+
+
+.treeview li{ /*Style for LI elements in general (excludes an LI that contains sub lists)*/
+background-color:#cfcfcf;
+background: url(images/list.gif) no-repeat left center;
+list-style-type: none;
+padding-left: 22px;
+margin-bottom: 3px;
+font-family:Arial, Helvetica, sans-serif;
+font-size:14px;
+color:#CCCCCC;
+text-align:left;
+}
+
+hr {
+ color: #cdcece;
+background-color: #223344;
+height: 2px;
+padding:0;
+}
+
+.treeview li.submenu{ /* Style for LI that contains sub lists (other ULs). */
+background-color:#cfcfcf;
+background: url(images/closed.gif) no-repeat left 1px;
+cursor: hand !important;
+cursor: pointer !important;
+color:#CCCCCC;
+text-align:left;
+}
+
+
+.treeview li.submenu ul{ /*Style for ULs that are children of LIs (submenu) */
+display: none; /*Hide them by default. Don't delete. */
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+color:#CCCCCC;
+text-align:left;
+
+}
+
+.treeview .submenu ul li{ /*Style for LIs of ULs that are children of LIs (submenu) */
+cursor: default;
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+color:#CCCCCC;
+text-align:left;
+
+}
+
+
+
+
+a {
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+text-decoration:none;
+color:#CCCCCC;
+}
+
+
+tr {
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+text-decoration:none;
+}
+
+td {
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+text-decoration:none;
+}
+
+
+	
+body, td {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+
+div#commentForm
+{
+margin: 0px 20px 0px 20px;
+display: none;
+}
+
+/* curve height */
+.myClassName .t, .myClassName .b, .myClassName .b b, .myClassName .t b{
+height:18px;
+}
+
+/* background image */
+.myClassName .t, .myClassName .b, .myClassName .t b, .myClassName .b b{
+background:url(images/223344112233cfcfcf5181600.png);
+}
+
+/* inner color, border color, border width */
+.myClassName .c{
+background:#112233;
+border-color:#cfcfcf;
+border-width:5px;
+}
+/* surrounding margins (optional) */
+.round{
+margin-bottom:10px;
+}
+.round .c{
+/* inner content padding */
+padding:0 10px 0 10px;
+border-top:0;
+border-bottom:0;
+border-style:solid;
+}
+.round .t, .round .b, .round .t b, .round .b b{
+display:block;
+overflow:hidden;
+}
+.round .t b, .round .b b{
+float:right;
+width:50%;
+}
+.round .t .r{
+background-position:top right;
+}
+.round .b .r{
+background-position:bottom right;
+}
+.round .b{
+background-position:bottom left;
+}
+.round .br{
+clear:both;
+display:block;
+overflow:hidden;
+height:0px;
+}
+

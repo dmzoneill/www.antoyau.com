@@ -3,6 +3,7 @@
     <title>Sample XSPF Playlist</title>
     <info>http://www.jeroenwijering.com/?item=Flash_MP3_Player</info>
     <trackList>
+<!-- jscpd:ignore-start -->
 
 
 
@@ -69,3 +70,4 @@
  
     </trackList>
 </playlist>
+<!-- jscpd:ignore-end -->

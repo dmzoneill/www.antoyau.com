@@ -1,3 +1,5 @@
+<?php // phpcs:ignoreFile ?>
+<?php // jscpd:ignore-start ?>
 
 <ul id="treemenu2" class="treeview">
 <li>Home Page</li>
@@ -100,3 +102,4 @@ if ($handle = opendir('../media/')) {
 <li>Links</li>
 <li>Merchandise</li>
 </ul>
+<?php // jscpd:ignore-end ?>

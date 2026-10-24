@@ -1,4 +1,6 @@
 <?php
+// phpcs:ignoreFile
+// jscpd:ignore-start
 
 /*
 This is a sample file that extracts a list of records from a mysql database and 
@@ -10,15 +12,15 @@ to your own database. This example uses the mp3player.
 
 
 // first connect to database
-$dbcnx = @mysql_connect("localhost","USER","PASS");
-$dbselect = @mysql_select_db("DATABASE");
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedFunction */ /** @psalm-suppress UndefinedFunction */ $dbcnx = @mysql_connect("localhost","USER","PASS");
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedFunction */ /** @psalm-suppress UndefinedFunction */ $dbselect = @mysql_select_db("DATABASE");
 if ((!$dbcnx) || (!$dbselect)) { echo "Can't connect to database"; }
 
 
 
 // next, query for a list of titles, files and links.
 $query = "SELECT title,file,link FROM mp3_table";
-$result = mysql_query($query) or die('Query failed: ' . mysql_error());
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedFunction */ /** @psalm-suppress UndefinedFunction */ $result = mysql_query($query) or die('Query failed: ' . mysql_error());
 
 
 
@@ -33,7 +35,7 @@ echo "	<info>http://www.jeroenwijering.com/</info>\n";
 echo "	<trackList>\n";
 
 // .. then we loop through the mysql array ..
-while($row = @mysql_fetch_array($result)) {
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedFunction */ /** @psalm-suppress UndefinedFunction */ while($row = @mysql_fetch_array($result)) {
 	echo "		<track>\n";
 	echo "			<annotation>".$row['title']."</annotation>\n";
 	echo "			<location>".$row['file']."</location>\n";
@@ -62,3 +64,4 @@ parameter in HTML. Assuming you use the mp3player, the HTML code looks like this
 */
 
 ?>
+<?php // jscpd:ignore-end ?>

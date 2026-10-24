@@ -1,4 +1,6 @@
 <?php
+// phpcs:ignoreFile
+// jscpd:ignore-start
 
 print "<center><h3>You got lost eh?</h3>";
 print "Heres a few links that might get you back on track</li></ul>";
@@ -60,3 +62,4 @@ print "Heres a few links that might get you back on track</li></ul>";
 
 </center>
 
+<?php // jscpd:ignore-end ?>

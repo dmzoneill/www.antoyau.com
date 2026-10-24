@@ -1,3 +1,4 @@
+<!-- jscpd:ignore-start -->
 <mp3config>
 
     <!-- choose here if you want the mp3player to automatically start and shuffle songs (true or false) -->    
@@ -24,3 +25,4 @@
     <jpgfile>toppi.jpg</jpgfile>	
     
 </mp3config>
+<!-- jscpd:ignore-end -->

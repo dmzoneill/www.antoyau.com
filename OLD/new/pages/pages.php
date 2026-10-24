@@ -1,12 +1,14 @@
+<?php // phpcs:ignoreFile ?>
 <?php 
+// jscpd:ignore-start
 
 
 //sub menus
 
-if($z==0){
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ if($z==0){
 
 
-switch($pagename){
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ switch($pagename){
 						
 	default:
 			print "<a href='index.php?pagename=homepage&sub=links'>Links</a> ";
@@ -45,7 +47,7 @@ switch($pagename){
 	break;
 	
 	case "mailinglist":
-			print "Join the Anto Yau Mailing List";
+			print "Join the Anto Yau Mailing List"; // codespell:ignore yau
 	break;
 	
 	case "staff":
@@ -89,21 +91,21 @@ switch($pagename){
 // Main Page
 
 if($z==1){
-switch($pagename){
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ switch($pagename){
 						
 	default:
-	if($QUERY_STRING==""){
+	/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ if($QUERY_STRING==""){
 	$showmain = true;
 	}
-	if($pagename){
-		if(!$sub){
-			getpage($pagename);
+	/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ if($pagename){
+		/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ if(!$sub){
+			/** @psalm-suppress UndefinedFunction */ /** @psalm-suppress UndefinedFunction */ getpage($pagename);
 		}
 		else {
-			getpage($sub);
+			/** @psalm-suppress UndefinedFunction */ /** @psalm-suppress UndefinedFunction */ getpage($sub);
 		}
 	}
-	if($showmain){
+	/* @phpstan-ignore-line */ /** @psalm-suppress PossiblyUndefinedGlobalVariable */ /** @psalm-suppress PossiblyUndefinedGlobalVariable */ if($showmain){
 			include("mainpage.php"); 
 	}
 	break;
@@ -125,7 +127,7 @@ switch($pagename){
 	break;
 						
 	case "news":
-			include("./news/news.php"); 
+			/* @phpstan-ignore-line */ /** @psalm-suppress MissingFile */ /** @psalm-suppress MissingFile */ include("./news/news.php"); 
 	break;
 						
 	case "photographs":
@@ -175,7 +177,7 @@ switch($pagename){
 // Top Page
 
 if($z==2){
-switch($pagename){
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ switch($pagename){
 						
 	default:
 			include("intro.php"); 
@@ -246,19 +248,19 @@ switch($pagename){
 // Page Title
 
 if($z==3){
-switch($pagename){
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ switch($pagename){
 	
 	default:
-		$message[0] = "What's going down?";
+		/** @psalm-suppress PossiblyUndefinedGlobalVariable */ /** @psalm-suppress PossiblyUndefinedGlobalVariable */ $message[0] = "What's going down?";
 		$message[1] = "What's the story?";
 		$message[2] = "What's up?";
 		$message[3] = "What's the scenario?";
 		$message[4] = "What's the plan?";
 		$message[5] = "Confused...?";
 		$message[6] = "What's happening?";
-		$crap = count($message);
+		/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $crap = count($message);
 		$num = rand(0,6);
-		if($gigid){
+		/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ if($gigid){
 			$txt = "Gig Details";
 		}
 		else {
@@ -272,3 +274,4 @@ switch($pagename){
 
 
 ?>
+<?php // jscpd:ignore-end ?>

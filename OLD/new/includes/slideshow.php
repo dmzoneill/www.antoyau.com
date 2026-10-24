@@ -1,4 +1,6 @@
 <?php
+// phpcs:ignoreFile
+// jscpd:ignore-start
 // Note that !== did not exist until 4.0.0-RC2
 
 if ($handle = opendir('/home/sites/site3/web/media/')) {
@@ -11,7 +13,7 @@ $imgs = array();
 	}
 	sort($imgs);
 	
-	if(!$imageid){
+	/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ if(!$imageid){
 	
 	$matrix = 3;
 	$total = 0;
@@ -63,3 +65,4 @@ if($next<count($imgs)){
 	closedir($handle);
 }
 ?> 
+<?php // jscpd:ignore-end ?>

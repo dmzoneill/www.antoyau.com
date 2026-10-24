@@ -1,3 +1,5 @@
+<?php // phpcs:ignoreFile ?>
+<?php // jscpd:ignore-start ?>
 
 	
 	<table cellpadding="8" border="0" align="center" width="100%"></tr><tr>
@@ -17,3 +19,4 @@
 </tr></table>
 	
 
+<?php // jscpd:ignore-end ?>

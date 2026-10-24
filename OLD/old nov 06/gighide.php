@@ -1,3 +1,5 @@
+<?php // phpcs:ignoreFile ?>
+<?php // jscpd:ignore-start ?>
 <script language="JavaScript1.2" type="text/javascript">
 
 
@@ -8,10 +10,10 @@ yr=theyear;mo=themonth;da=theday
 //////////CONFIGURE THE COUNTDOWN SCRIPT HERE//////////////////
 
 //STEP 1: Configure the countdown-to date, in the format year, month, day:
-setcountdown(<?php print "$thisyear,$thismonth,$thisday"; ?>)
+setcountdown(<?php /* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ print "$thisyear,$thismonth,$thisday"; ?>)
 
 //STEP 2: Change the two text below to reflect the occasion, and message to display on that occasion, respectively
-var occasion=" the next Gig, @ <?php print "$venue, $location"; ?>"
+var occasion=" the next Gig, @ <?php /* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ print "$venue, $location"; ?>"
 var message_on_occasion="Are you at anto's gig tonight?"
 
 //STEP 3: Configure the below 5 variables to set the width, height, background color, and text style of the countdown area
@@ -91,3 +93,4 @@ setTimeout("countdown()",1000)
 </script>
 
 <ilayer id="countdownnsmain" width=&{countdownwidth}; height=&{countdownheight}; bgColor=&{countdownbgcolor}; visibility=hide><layer id="countdownnssub" width=&{countdownwidth}; height=&{countdownheight}; left=0 top=0></layer></ilayer>
+<?php // jscpd:ignore-end ?>

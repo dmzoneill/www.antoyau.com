@@ -1,5 +1,3 @@
-/* eslint-disable */
-// jscpd:ignore-start
 /**
  * SWFObject v1.4.4: Flash Player detection and embed - http://blog.deconcept.com/swfobject/
  *
@@ -138,4 +136,3 @@ return this.length;};}
 var getQueryParamValue=deconcept.util.getRequestParameter;
 var FlashObject=deconcept.SWFObject;
 var SWFObject=deconcept.SWFObject;
-// jscpd:ignore-end

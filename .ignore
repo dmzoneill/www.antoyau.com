@@ -1,0 +1,6 @@
+
+# Vendored third-party: EvoGB database class by neiller (evobb.com), see file header; copied into several site versions.
+db_mysql.php
+
+# Vendored third-party: SWFObject by Geoff Stearns (see file header).
+swfobject.js

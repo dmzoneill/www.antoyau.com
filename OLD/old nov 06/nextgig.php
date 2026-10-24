@@ -5,7 +5,7 @@
 
 $nextgig = time();
 
-/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ $sql = $stream->do_query("select * from anto_gigs where dated>$nextgig order by dated asc","array");
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ $sql = $stream->do_query("select * from anto_gigs where dated>$nextgig order by dated asc","array");
 
 
 /** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $q=0;
@@ -40,7 +40,7 @@ include("gighide.php");
 /** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $q++;
 }
 
-/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ $topright = $stream->do_query("select link from anto_images where name='topright'","one");
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ $topright = $stream->do_query("select link from anto_images where name='topright'","one");
 
 print "</td><td><img  alt='image' src='$topright' vspace=0 hspace=0></td></tr></table>";
 

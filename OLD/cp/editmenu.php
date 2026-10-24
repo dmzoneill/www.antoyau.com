@@ -22,7 +22,7 @@ $menu = $_GET['menu'];
 
 if($menu=="change"){
 
-/** @psalm-suppress PossiblyInvalidArgument */ for($t=0;$t<count($idt);$t++){
+/** @psalm-suppress PossiblyInvalidArgument */ /** @psalm-suppress PossiblyInvalidArgument */ for($t=0;$t<count($idt);$t++){
 
 if(!$boldto[$t]){
 $bold = 0;
@@ -31,7 +31,7 @@ else {
 $bold = 1;
 }
 
-/* @phpstan-ignore-line */ /** @psalm-suppress UnusedVariable, UndefinedGlobalVariable, PossiblyInvalidCast */ /** @psalm-suppress UnusedVariable */ $sql = $stream->do_query("update anto_menu set link='$linkto[$t]', title='$titleto[$t]', bold='$bold', place='$position[$t]' where id='$idt[$t]'","one");
+/* @phpstan-ignore-line */ /** @psalm-suppress UnusedVariable, UndefinedGlobalVariable, PossiblyInvalidCast */ /** @psalm-suppress UnusedVariable, UndefinedGlobalVariable, PossiblyInvalidCast */ $sql = $stream->do_query("update anto_menu set link='$linkto[$t]', title='$titleto[$t]', bold='$bold', place='$position[$t]' where id='$idt[$t]'","one");
 }
 
 print "<h5>Menu Updated</h5><hr><br>";
@@ -41,40 +41,40 @@ print "<h5>Menu Updated</h5><hr><br>";
 
 
 
-/** @psalm-suppress RiskyTruthyFalsyComparison */ if($add){
+/** @psalm-suppress RiskyTruthyFalsyComparison */ /** @psalm-suppress RiskyTruthyFalsyComparison */ if($add){
 
-/** @psalm-suppress RiskyTruthyFalsyComparison */ if($breaker){
-/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ $position = count($stream->do_query("select * from anto_menu","array"))+1;
-/* @phpstan-ignore-line */ /** @psalm-suppress UnusedVariable, UndefinedGlobalVariable */ /** @psalm-suppress UnusedVariable */ $sql = $stream->do_query("insert into anto_menu values('','0','0','0','$position')","one");
+/** @psalm-suppress RiskyTruthyFalsyComparison */ /** @psalm-suppress RiskyTruthyFalsyComparison */ if($breaker){
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ $position = count($stream->do_query("select * from anto_menu","array"))+1;
+/* @phpstan-ignore-line */ /** @psalm-suppress UnusedVariable, UndefinedGlobalVariable */ /** @psalm-suppress UnusedVariable, UndefinedGlobalVariable */ $sql = $stream->do_query("insert into anto_menu values('','0','0','0','$position')","one");
 print "<h5>Menu Item Added (Line Break)</h5><br><hr>";
 }
 else {
 
-/** @psalm-suppress RiskyTruthyFalsyComparison */ if($boldto){
+/** @psalm-suppress RiskyTruthyFalsyComparison */ /** @psalm-suppress RiskyTruthyFalsyComparison */ if($boldto){
 	$bold = "1";
 }
 else {
 	$bold = "0";
 }
 
-/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ $position = count($stream->do_query("select * from anto_menu","array"))+1;
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ $position = count($stream->do_query("select * from anto_menu","array"))+1;
  
-  /* @phpstan-ignore-line */ /** @psalm-suppress UnusedVariable, UndefinedGlobalVariable, PossiblyInvalidCast */ /** @psalm-suppress UnusedVariable */ $sql = $stream->do_query("insert into anto_menu values('','$linkto','$titleto','$bold','$position')","one");
+  /* @phpstan-ignore-line */ /** @psalm-suppress UnusedVariable, UndefinedGlobalVariable, PossiblyInvalidCast */ /** @psalm-suppress UnusedVariable, UndefinedGlobalVariable, PossiblyInvalidCast */ $sql = $stream->do_query("insert into anto_menu values('','$linkto','$titleto','$bold','$position')","one");
   
-  /** @psalm-suppress RiskyTruthyFalsyComparison */ if($newpageto){
-  	/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable, PossiblyInvalidCast */ $stream->do_query("insert into anto_pages values('','$titleto','')","one");
+  /** @psalm-suppress RiskyTruthyFalsyComparison */ /** @psalm-suppress RiskyTruthyFalsyComparison */ if($newpageto){
+  	/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable, PossiblyInvalidCast */ /** @psalm-suppress UndefinedGlobalVariable, PossiblyInvalidCast */ $stream->do_query("insert into anto_pages values('','$titleto','')","one");
   }
  print "<h5>Menu Item Added</h5><br><hr>";
 }
 }
 
-/** @psalm-suppress RiskyTruthyFalsyComparison */ if($delete){
-/* @phpstan-ignore-line */ /** @psalm-suppress UnusedVariable, UndefinedGlobalVariable, PossiblyInvalidCast */ /** @psalm-suppress UnusedVariable */ $sql = $stream->do_query("delete from anto_menu where id=$item","one");
+/** @psalm-suppress RiskyTruthyFalsyComparison */ /** @psalm-suppress RiskyTruthyFalsyComparison */ if($delete){
+/* @phpstan-ignore-line */ /** @psalm-suppress UnusedVariable, UndefinedGlobalVariable, PossiblyInvalidCast */ /** @psalm-suppress UnusedVariable, UndefinedGlobalVariable, PossiblyInvalidCast */ $sql = $stream->do_query("delete from anto_menu where id=$item","one");
   
  print "<h5>Menu Item Deleted</h5><br><hr>";
 }
   
-  /* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ $sql = $stream->do_query("select * from anto_menu order by place asc","array");
+  /* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ $sql = $stream->do_query("select * from anto_menu order by place asc","array");
 
   
   print "<br><br><h5>Menu Editor</h5><hr><br><form action=admin.php?control=editmenu&menu=change method=post><table cellpadding=2 width=600>";
@@ -160,7 +160,7 @@ print "<tr><td colspan=4><input type=submit value='update menu'> <input type=res
 	}
 	$select = $select ."</select>";
 
-/* @phpstan-ignore-line */ /** @psalm-suppress PossiblyUndefinedGlobalVariable */ print "<tr bgcolor='$bg'>
+/* @phpstan-ignore-line */ /** @psalm-suppress PossiblyUndefinedGlobalVariable */ /** @psalm-suppress PossiblyUndefinedGlobalVariable */ print "<tr bgcolor='$bg'>
 		<td width=250>Link</td><td><input type='text' name='linkto' size='35' readonly='yes'> <br>Readonly:link generated by title</td></tr><tr>
 		<td>Title</td><td><input type='text' name='titleto' size='20' 
 		onKeyUp=\"document.fed.linkto.value='index.php?pagename=' + this.value\"></td></tr><tr>

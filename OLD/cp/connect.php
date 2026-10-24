@@ -12,8 +12,8 @@ $fcwdb_type = "mysql";
 
 
 
-/* @phpstan-ignore-line */ /** @psalm-suppress UnresolvableInclude, UndefinedGlobalVariable */ include($path."db_".$fcwdb_type.".php");
-/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedClass */ $stream = new db;
-/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedClass */ $stream->connect();
+/* @phpstan-ignore-line */ /** @psalm-suppress UnresolvableInclude, UndefinedGlobalVariable */ /** @psalm-suppress UnresolvableInclude, UndefinedGlobalVariable */ include($path."db_".$fcwdb_type.".php");
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedClass */ /** @psalm-suppress UndefinedClass */ $stream = new db;
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedClass */ /** @psalm-suppress UndefinedClass */ $stream->connect();
 
 // jscpd:ignore-end

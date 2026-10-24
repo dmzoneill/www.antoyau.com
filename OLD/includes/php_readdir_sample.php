@@ -24,7 +24,7 @@ if ($d) {
 	while($entry=$d->read()) {  
 		$ps = strpos(strtolower($entry), $filter);
 		if (!($ps === false)) {  
-			/** @psalm-suppress PossiblyUndefinedGlobalVariable */ $items[] = $entry; 
+			/** @psalm-suppress PossiblyUndefinedGlobalVariable */ /** @psalm-suppress PossiblyUndefinedGlobalVariable */ $items[] = $entry; 
 		} 
 	}
 	$d->close();
@@ -44,10 +44,10 @@ echo "	<info>http://www.jeroenwijering.com/</info>\n";
 echo "	<trackList>\n";
 
 // .. then we loop through the mysql array ..
-/* @phpstan-ignore-line */ /** @psalm-suppress PossiblyUndefinedGlobalVariable */ for($i=0; $i<sizeof($items); $i++) {
+/* @phpstan-ignore-line */ /** @psalm-suppress PossiblyUndefinedGlobalVariable */ /** @psalm-suppress PossiblyUndefinedGlobalVariable */ for($i=0; $i<sizeof($items); $i++) {
 	echo "		<track>\n";
-	/* @phpstan-ignore-line */ /** @psalm-suppress PossiblyUndefinedGlobalVariable */ echo "			<annotation>".($i+1).". ".$items[$i]."</annotation>\n";
-	/* @phpstan-ignore-line */ /** @psalm-suppress PossiblyUndefinedGlobalVariable */ echo "			<location>".$directory.'/'.$items[$i]."</location>\n";
+	/* @phpstan-ignore-line */ /** @psalm-suppress PossiblyUndefinedGlobalVariable */ /** @psalm-suppress PossiblyUndefinedGlobalVariable */ echo "			<annotation>".($i+1).". ".$items[$i]."</annotation>\n";
+	/* @phpstan-ignore-line */ /** @psalm-suppress PossiblyUndefinedGlobalVariable */ /** @psalm-suppress PossiblyUndefinedGlobalVariable */ echo "			<location>".$directory.'/'.$items[$i]."</location>\n";
 	echo "			<info></info>\n";
 	echo "		</track>\n";
 }

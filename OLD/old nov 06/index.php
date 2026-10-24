@@ -44,7 +44,7 @@ include("header.php");
 <table width="600" bgcolor='#000000' border="0" cellspacing="1" cellpadding="0"><tr><td>
 	<table width="600" bgcolor='#efefef' border="0" cellspacing="0" cellpadding="0"><tr><td>
 		<div id='output' class=main></div>
-		<?php /* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ if($player){
+		<?php /* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ if($player){
 		/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $sub = "player";
 		include("lyrics.php");
 		}

@@ -11,7 +11,7 @@
 
 <?php
 
-/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ switch($mint){
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ switch($mint){
 
 
 default:
@@ -42,7 +42,7 @@ break;
 
 case "show":
 
-/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ print rawurlencode($ggg);
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ print rawurlencode($ggg);
 
 break;
 

@@ -59,9 +59,9 @@ print "</table>";
 <table width="80%"  border="0" cellspacing="0" cellpadding="2">
   <tr><td>
   Visitors :
-  <?php /** @psalm-suppress MissingFile */ include("counter.php"); ?>
+  <?php /** @psalm-suppress MissingFile */ /** @psalm-suppress MissingFile */ include("counter.php"); ?>
   <br>
-  <?php /** @psalm-suppress MissingFile */ include("lastupdated.php"); ?>
+  <?php /** @psalm-suppress MissingFile */ /** @psalm-suppress MissingFile */ include("lastupdated.php"); ?>
   <br>
   </td></tr></table>
   

@@ -5,16 +5,16 @@
 /** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $control = $_GET['control'];
 $id = $_GET['id'];
 
-/** @psalm-suppress RiskyTruthyFalsyComparison */ if($id){
-/* @phpstan-ignore-line */ /** @psalm-suppress UnusedVariable, UndefinedGlobalVariable, PossiblyInvalidCast */ /** @psalm-suppress UnusedVariable */ $sql = $stream->do_query("delete from news_data where id='$id'","one");
+/** @psalm-suppress RiskyTruthyFalsyComparison */ /** @psalm-suppress RiskyTruthyFalsyComparison */ if($id){
+/* @phpstan-ignore-line */ /** @psalm-suppress UnusedVariable, UndefinedGlobalVariable, PossiblyInvalidCast */ /** @psalm-suppress UnusedVariable, UndefinedGlobalVariable, PossiblyInvalidCast */ $sql = $stream->do_query("delete from news_data where id='$id'","one");
 print "Deleted";
 }
 else {
-/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ $sql = $stream->do_query("select * from news_data","array");
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ $sql = $stream->do_query("select * from news_data","array");
 
 for($i=0;$i<count($sql);$i++){
 
-	/* @phpstan-ignore-line */ /** @psalm-suppress UnusedVariable, UndefinedGlobalVariable */ /** @psalm-suppress UnusedVariable */ $oldmonth = $newmonth; 
+	/* @phpstan-ignore-line */ /** @psalm-suppress UnusedVariable, UndefinedGlobalVariable */ /** @psalm-suppress UnusedVariable, UndefinedGlobalVariable */ $oldmonth = $newmonth; 
 	$tmp = $sql[$i];
 	$id = $tmp[0];
 	$title = substr("$tmp[1]",0,25);

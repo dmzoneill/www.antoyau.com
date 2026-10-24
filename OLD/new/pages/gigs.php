@@ -3,11 +3,11 @@
 <style type="text/css">
 <?php
 include("connect.php");
-/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ if(!$mintage1){
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ if(!$mintage1){
 $mintage1 = "11px";
 }
-/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedClass, UndefinedGlobalVariable */ $css = stripslashes(rawurldecode($stream->do_query("select css from anto_css where id='$mintage'","one")));
-/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedFunction */ $css = eregi_replace("11px",$mintage1,$css);
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedClass, UndefinedGlobalVariable */ /** @psalm-suppress UndefinedClass, UndefinedGlobalVariable */ $css = stripslashes(rawurldecode($stream->do_query("select css from anto_css where id='$mintage'","one")));
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedFunction */ /** @psalm-suppress UndefinedFunction */ $css = eregi_replace("11px",$mintage1,$css);
 print $css;
 
 ?>
@@ -19,14 +19,14 @@ print $css;
 
 $today = time();
 
-/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedClass */ $sql = $stream->do_query("select * from anto_gigs where dated>$today order by dated asc","array");
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedClass */ /** @psalm-suppress UndefinedClass */ $sql = $stream->do_query("select * from anto_gigs where dated>$today order by dated asc","array");
 
 /** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $r=0;
 $t=0;
 $p=0;
 for($i=0;$i<count($sql);$i++){
 
-	/* @phpstan-ignore-line */ /** @psalm-suppress UnusedVariable, PossiblyUndefinedGlobalVariable */ /** @psalm-suppress UnusedVariable */ $oldmonth = $newmonth; 
+	/* @phpstan-ignore-line */ /** @psalm-suppress UnusedVariable, PossiblyUndefinedGlobalVariable */ /** @psalm-suppress UnusedVariable, PossiblyUndefinedGlobalVariable */ $oldmonth = $newmonth; 
 	$tmp = $sql[$i];
 	$id = $tmp[0];
 	$name = $tmp[1];
@@ -85,14 +85,14 @@ else {
 
 $today = time();
 
-/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedClass */ $sql = $stream->do_query("select * from anto_gigs where dated<$today order by dated asc","array");
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedClass */ /** @psalm-suppress UndefinedClass */ $sql = $stream->do_query("select * from anto_gigs where dated<$today order by dated asc","array");
 
 /** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $r=0;
 /** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $t=0;
 $p=0;
 for($i=0;$i<count($sql);$i++){
 
-	/* @phpstan-ignore-line */ /** @psalm-suppress UnusedVariable, PossiblyUndefinedGlobalVariable */ /** @psalm-suppress UnusedVariable */ $oldmonth = $newmonth; 
+	/* @phpstan-ignore-line */ /** @psalm-suppress UnusedVariable, PossiblyUndefinedGlobalVariable */ /** @psalm-suppress UnusedVariable, PossiblyUndefinedGlobalVariable */ $oldmonth = $newmonth; 
 	$tmp = $sql[$i];
 	$id = $tmp[0];
 	$name = $tmp[1];

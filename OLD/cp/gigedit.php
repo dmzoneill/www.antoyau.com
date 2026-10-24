@@ -3,31 +3,31 @@
 // jscpd:ignore-start
 
 
-/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ if($editid){
-/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ $str = mktime ($hour,$minute,0,$month,$day,$year);
-/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ $price = "$euro.$cent";
-/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ $ql = explode(",","named='$country', dated='$str', location='$location', venue='$venue', timed='$str', priced='$price', notes='$notes', images='$img', other='$kother', misc='$misc' where id='$editid'");
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ if($editid){
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ $str = mktime ($hour,$minute,0,$month,$day,$year);
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ $price = "$euro.$cent";
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ $ql = explode(",","named='$country', dated='$str', location='$location', venue='$venue', timed='$str', priced='$price', notes='$notes', images='$img', other='$kother', misc='$misc' where id='$editid'");
 print "<br><br>";
 for($t=0;$t<count($ql);$t++){
 print "$ql[$t]<br>";
 }
 print "<br><br>";
-/* @phpstan-ignore-line */ /** @psalm-suppress UnusedVariable, UndefinedGlobalVariable */ /** @psalm-suppress UnusedVariable */ $sql = $stream->do_query("update anto_gigs set named='$country', dated='$str', location='$location', venue='$venue', timed='$str', priced='$price', notes='$notes', images='$img', other='$kother', misc='$misc' where id='$editid'","one");
+/* @phpstan-ignore-line */ /** @psalm-suppress UnusedVariable, UndefinedGlobalVariable */ /** @psalm-suppress UnusedVariable, UndefinedGlobalVariable */ $sql = $stream->do_query("update anto_gigs set named='$country', dated='$str', location='$location', venue='$venue', timed='$str', priced='$price', notes='$notes', images='$img', other='$kother', misc='$misc' where id='$editid'","one");
 print "Gig details updated";
 }
-/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ if($showgig) {
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ if($showgig) {
 
 print "<table cellpadding=2 cellspacing=0 border=0 width=600>";
 		print "<tr><td colspan=17 align=left><h6><a href=\"javascript:sweeptoggle('contract')\">Contract All</a> | <a href=\"javascript:sweeptoggle('expand')\">Expand All</a></h6></td></tr>";
 		print "<tr><td align=left>";
 
-/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ $sql = $stream->do_query("select * from anto_gigs where id=$showgig","array");
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ $sql = $stream->do_query("select * from anto_gigs where id=$showgig","array");
 
 
 
 for($i=0;$i<count($sql);$i++){
 
-/* @phpstan-ignore-line */ /** @psalm-suppress PossiblyUndefinedGlobalVariable */ $oldmonth = $newmonth; 
+/* @phpstan-ignore-line */ /** @psalm-suppress PossiblyUndefinedGlobalVariable */ /** @psalm-suppress PossiblyUndefinedGlobalVariable */ $oldmonth = $newmonth; 
 
 $tmp = $sql[$i];
 $id = $tmp[0];
@@ -128,7 +128,7 @@ print "</select></td></tr>\n";
 print "<tr><td  >Price : </td><td  >Euros : <input   type=text value='$price[0]' name='euro'> Cent : <input   type=text value='$price[1]' name='cent'></td></tr>";
 print "<tr><td  >Notes : </td><td  ><textarea class='textarea'  cols=40 rows=6 name=notes>$notes</textarea></td></tr>";
 print "<tr><td  >Sold out or what not : </td><td  ><input   type=text value='$other' name='kother'></td></tr>";
-/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ print "<tr><td  >Image : </td><td  ><input   type=text value='$img' name='img'></td></tr>";
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ print "<tr><td  >Image : </td><td  ><input   type=text value='$img' name='img'></td></tr>";
 print "<input   type=hidden name='insert' value=true>";
 print "<tr><td  >Edit Gig ? </td><td  ><input   type=submit value='Edit Gig'> <input type=reset value='Reset'></td></tr>";
 print "</form></table></div>";
@@ -138,12 +138,12 @@ print "</td></tr></table>";
 }
 else {
 
-/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ $sql = $stream->do_query("select * from anto_gigs order by dated desc","array");
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ $sql = $stream->do_query("select * from anto_gigs order by dated desc","array");
 
 
 for($i=0;$i<count($sql);$i++){
 
-/* @phpstan-ignore-line */ /** @psalm-suppress UnusedVariable, PossiblyUndefinedGlobalVariable */ /** @psalm-suppress UnusedVariable */ $oldmonth = $newmonth; 
+/* @phpstan-ignore-line */ /** @psalm-suppress UnusedVariable, PossiblyUndefinedGlobalVariable */ /** @psalm-suppress UnusedVariable, PossiblyUndefinedGlobalVariable */ $oldmonth = $newmonth; 
 
 $tmp = $sql[$i];
 $id = $tmp[0];

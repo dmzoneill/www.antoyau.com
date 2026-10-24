@@ -5,10 +5,10 @@
 
 //sub menus
 
-/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ if($z==0){
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ if($z==0){
 
 
-/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ switch($pagename){
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ switch($pagename){
 						
 	default:
 			print "<a href='index.php?pagename=homepage&sub=links'>Links</a> ";
@@ -91,21 +91,21 @@
 // Main Page
 
 if($z==1){
-/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ switch($pagename){
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ switch($pagename){
 						
 	default:
-	/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ if($QUERY_STRING==""){
+	/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ if($QUERY_STRING==""){
 	$showmain = true;
 	}
-	/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ if($pagename){
-		/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ if(!$sub){
-			/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedFunction */ getpage($pagename);
+	/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ if($pagename){
+		/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ if(!$sub){
+			/** @psalm-suppress UndefinedFunction */ /** @psalm-suppress UndefinedFunction */ getpage($pagename);
 		}
 		else {
-			/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedFunction */ getpage($sub);
+			/** @psalm-suppress UndefinedFunction */ /** @psalm-suppress UndefinedFunction */ getpage($sub);
 		}
 	}
-	/* @phpstan-ignore-line */ /** @psalm-suppress PossiblyUndefinedGlobalVariable */ if($showmain){
+	/* @phpstan-ignore-line */ /** @psalm-suppress PossiblyUndefinedGlobalVariable */ /** @psalm-suppress PossiblyUndefinedGlobalVariable */ if($showmain){
 			include("mainpage.php"); 
 	}
 	break;
@@ -127,7 +127,7 @@ if($z==1){
 	break;
 						
 	case "news":
-			/* @phpstan-ignore-line */ /** @psalm-suppress MissingFile */ include("./news/news.php"); 
+			/* @phpstan-ignore-line */ /** @psalm-suppress MissingFile */ /** @psalm-suppress MissingFile */ include("./news/news.php"); 
 	break;
 						
 	case "photographs":
@@ -177,7 +177,7 @@ if($z==1){
 // Top Page
 
 if($z==2){
-/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ switch($pagename){
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ switch($pagename){
 						
 	default:
 			include("intro.php"); 
@@ -248,10 +248,10 @@ if($z==2){
 // Page Title
 
 if($z==3){
-/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ switch($pagename){
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ switch($pagename){
 	
 	default:
-		/** @psalm-suppress PossiblyUndefinedGlobalVariable */ $message[0] = "What's going down?";
+		/** @psalm-suppress PossiblyUndefinedGlobalVariable */ /** @psalm-suppress PossiblyUndefinedGlobalVariable */ $message[0] = "What's going down?";
 		$message[1] = "What's the story?";
 		$message[2] = "What's up?";
 		$message[3] = "What's the scenario?";
@@ -260,7 +260,7 @@ if($z==3){
 		$message[6] = "What's happening?";
 		/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $crap = count($message);
 		$num = rand(0,6);
-		/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ if($gigid){
+		/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ if($gigid){
 			$txt = "Gig Details";
 		}
 		else {

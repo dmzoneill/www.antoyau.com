@@ -4,32 +4,32 @@
 
 include("connect.php"); 
 
-/** @psalm-suppress MissingReturnType, MissingParamType */ function getpage($page){
+/** @psalm-suppress MissingReturnType, MissingParamType */ /** @psalm-suppress MissingReturnType, MissingParamType */ function getpage($page){
 global $stream;
 $page = strtolower($page);
-/** @psalm-suppress UndefinedClass */ $page = rawurldecode($stream->do_query("select content from anto_pages where name='$page'","one"));
+/** @psalm-suppress UndefinedClass */ /** @psalm-suppress UndefinedClass */ $page = rawurldecode($stream->do_query("select content from anto_pages where name='$page'","one"));
 print stripslashes(nl2br($page));
 
 }
-/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ if(!$pagename){
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ if(!$pagename){
 $pagename = "start";
 }
 
 switch($pagename){
 						
 	default:
-	/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ if($QUERY_STRING==""){
+	/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ if($QUERY_STRING==""){
 	$showmain = true;
 	}
-	/* @phpstan-ignore-line */ /** @psalm-suppress RiskyTruthyFalsyComparison */ if($pagename){
-		/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ if(!$sub){
+	/* @phpstan-ignore-line */ /** @psalm-suppress RiskyTruthyFalsyComparison, RedundantCondition */ /** @psalm-suppress RiskyTruthyFalsyComparison, RedundantCondition */ if($pagename){
+		/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ if(!$sub){
 			getpage($pagename);
 		}
 		else {
 			getpage($sub);
 		}
 	}
-	/* @phpstan-ignore-line */ /** @psalm-suppress PossiblyUndefinedGlobalVariable */ if($showmain){
+	/* @phpstan-ignore-line */ /** @psalm-suppress PossiblyUndefinedGlobalVariable */ /** @psalm-suppress PossiblyUndefinedGlobalVariable */ if($showmain){
 			include("mainpage.php"); 
 	}
 	break;
@@ -71,7 +71,7 @@ switch($pagename){
 	break;
 						
 	case "news":
-			/* @phpstan-ignore-line */ /** @psalm-suppress MissingFile */ include("./news/news.php"); 
+			/* @phpstan-ignore-line */ /** @psalm-suppress MissingFile */ /** @psalm-suppress MissingFile */ include("./news/news.php"); 
 	break;
 						
 	case "photographs":

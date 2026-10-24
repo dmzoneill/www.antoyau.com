@@ -2,7 +2,7 @@
 // phpcs:ignoreFile
 // jscpd:ignore-start
 
-/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ switch($sub){
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable, TypeDoesNotContainType */ /** @psalm-suppress UndefinedGlobalVariable, TypeDoesNotContainType */ switch($sub){
 
 default:
 print "<table bgcolor=#000000 width=\"600\" border=\"0\" cellspacing=\"1\" cellpadding=\"0\">";
@@ -12,7 +12,7 @@ print "<table bgcolor=#ffffff width=\"600\" border=\"0\" cellspacing=\"2\" cellp
 print "<tr>";
 print "<td width=100% bgcolor=#ffffff valign=top align=left><center>";
 
-/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ $sql = $stream->do_query("select * from anto_lyrics order by songorder asc","array");
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable, UndefinedClass */ /** @psalm-suppress UndefinedGlobalVariable, UndefinedClass */ $sql = $stream->do_query("select * from anto_lyrics order by songorder asc","array");
 
 for($i=0;$i<count($sql);$i++){
 $tmp = $sql[$i];
@@ -24,7 +24,7 @@ $name = $tmp[1];
 //continue;
 //}
 
-/* @phpstan-ignore-line */ /** @psalm-suppress PossiblyUndefinedGlobalVariable */ print "<a href='#$id'> $name </a> &nbsp;  $add\n";
+/* @phpstan-ignore-line */ /** @psalm-suppress PossiblyUndefinedGlobalVariable */ /** @psalm-suppress PossiblyUndefinedGlobalVariable */ print "<a href='#$id'> $name </a> &nbsp;  $add\n";
 if($i%4>0){
 $add = "";
 }
@@ -37,7 +37,7 @@ $add = "<br>";
 print "</center></td></tr></table></td></tr></table>\n\n";
 
 
-/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ $sql = $stream->do_query("select * from anto_lyrics order by songorder asc","array");
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable, UndefinedClass */ /** @psalm-suppress UndefinedGlobalVariable, UndefinedClass */ $sql = $stream->do_query("select * from anto_lyrics order by songorder asc","array");
 
 
 for($i=0;$i<count($sql);$i++){

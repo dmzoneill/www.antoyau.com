@@ -29,7 +29,7 @@ document.location.href= "http://www.antoyau.com/index.php?pagename=journal#" + u
 
 
 
-/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ $sql = $stream->do_query("select * from anto_journal order by id desc","array");
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable, UndefinedClass */ /** @psalm-suppress UndefinedGlobalVariable, UndefinedClass */ $sql = $stream->do_query("select * from anto_journal order by id desc","array");
 print "<form name=fed><select name=url>";
 for($i=0;$i<count($sql);$i++){
 
@@ -45,7 +45,7 @@ print "</select><input type=button onclick=\"javascript:gothere(document.fed.url
 
 
 
-/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ $sql = $stream->do_query("select * from anto_journal order by id desc","array");
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable, UndefinedClass */ /** @psalm-suppress UndefinedGlobalVariable, UndefinedClass */ $sql = $stream->do_query("select * from anto_journal order by id desc","array");
 
 for($i=0;$i<count($sql);$i++){
 
@@ -70,7 +70,7 @@ print "</center></td></tr></table></td></tr></table>\n\n";
 
 
 
-/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ $sql = $stream->do_query("select * from anto_journal order by id desc","array");
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable, UndefinedClass */ /** @psalm-suppress UndefinedGlobalVariable, UndefinedClass */ $sql = $stream->do_query("select * from anto_journal order by id desc","array");
 
 /** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $k=0;
 for($i=0;$i<count($sql);$i++){

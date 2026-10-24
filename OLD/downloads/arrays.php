@@ -6,24 +6,24 @@
 	* http://www.gnu.org/copyleft/lesser.txt 
 	*/
 	
-/* @phpstan-ignore-line */ /** @psalm-suppress InvalidScope */ $this->LookAudioVersion=array('00'=>'MPEG2.5','01'=>'Reserved','10'=>'MPEG2','11'=>'MPEG1');
-/* @phpstan-ignore-line */ /** @psalm-suppress InvalidScope */ $this->LookLayerDescrip=array('00'=>'reserved','01'=>'LayerIII','10'=>'LayerII','11'=>'LayerI');
-/* @phpstan-ignore-line */ /** @psalm-suppress InvalidScope */ $this->Emphasis=array('00'=>'none','01'=>'50/15 ms','10'=>'reserved','11'=>'CCIT J.17');
-/* @phpstan-ignore-line */ /** @psalm-suppress InvalidScope */ $this->ChannelMode=array('00'=>'Stereo','01'=>'Joint stereo','10'=>'Dual channel','11'=>'Single channel');
+/* @phpstan-ignore-line */ /** @psalm-suppress InvalidScope */ /** @psalm-suppress InvalidScope */ $this->LookAudioVersion=array('00'=>'MPEG2.5','01'=>'Reserved','10'=>'MPEG2','11'=>'MPEG1');
+/* @phpstan-ignore-line */ /** @psalm-suppress InvalidScope */ /** @psalm-suppress InvalidScope */ $this->LookLayerDescrip=array('00'=>'reserved','01'=>'LayerIII','10'=>'LayerII','11'=>'LayerI');
+/* @phpstan-ignore-line */ /** @psalm-suppress InvalidScope */ /** @psalm-suppress InvalidScope */ $this->Emphasis=array('00'=>'none','01'=>'50/15 ms','10'=>'reserved','11'=>'CCIT J.17');
+/* @phpstan-ignore-line */ /** @psalm-suppress InvalidScope */ /** @psalm-suppress InvalidScope */ $this->ChannelMode=array('00'=>'Stereo','01'=>'Joint stereo','10'=>'Dual channel','11'=>'Single channel');
 
-/* @phpstan-ignore-line */ /** @psalm-suppress InvalidScope */ $this->Intensity=array(
+/* @phpstan-ignore-line */ /** @psalm-suppress InvalidScope */ /** @psalm-suppress InvalidScope */ $this->Intensity=array(
 	'IntensityMSstereo'=>array('00'=>'off','01'=>'on-off','10'=>'off-on','11'=>'on'),
 	'Band'=>array('00'=>'4 to 31','01'=>'8 to 31','10'=>'12 to 31','11'=>'16 to 31')
 );
 
-/* @phpstan-ignore-line */ /** @psalm-suppress InvalidScope */ $this->LookSamplingRate=array(
+/* @phpstan-ignore-line */ /** @psalm-suppress InvalidScope */ /** @psalm-suppress InvalidScope */ $this->LookSamplingRate=array(
 	'MPEG1'=>array('00'=>'44100','01'=>'48000','10'=>'32000','11'=>'Reserved'),
 	'MPEG2'=>array('00'=>'22050','01'=>'24000','10'=>'16000','11'=>'Reserved'),
 	'MPEG2.5'=>array('00'=>'11025','01'=>'12000','10'=>'8000','11'=>'Reserved')
 );
 
 
-/* @phpstan-ignore-line */ /** @psalm-suppress InvalidScope */ $this->LookBitrateValues=array(
+/* @phpstan-ignore-line */ /** @psalm-suppress InvalidScope */ /** @psalm-suppress InvalidScope */ $this->LookBitrateValues=array(
 	'MPEG1'=>array(
 		'LayerI'=>array('free',32,64,96,128,160,192,224,256,288,320,352,384,416,448,'bad'),
 		'LayerII'=>array('free',32,48,56,64,80,96,112,128,160,192,224,256,320,384,'bad'),
@@ -41,7 +41,7 @@
 		'LayerIII'=>array('free',8,16,24,32,40,48,56,64,80,96,112,128,144,160,'bad')
 	)
 );
-/* @phpstan-ignore-line */ /** @psalm-suppress InvalidScope */ $this->LookBitrateIndex=array(
+/* @phpstan-ignore-line */ /** @psalm-suppress InvalidScope */ /** @psalm-suppress InvalidScope */ $this->LookBitrateIndex=array(
 	'0000'=>0,
 	'0001'=>1,
 	'0010'=>2,
@@ -60,7 +60,7 @@
 	'1111'=>15
 );
 
-/* @phpstan-ignore-line */ /** @psalm-suppress InvalidScope */ $this->LookFrameLen=array(
+/* @phpstan-ignore-line */ /** @psalm-suppress InvalidScope */ /** @psalm-suppress InvalidScope */ $this->LookFrameLen=array(
 	'MPEG1'=>array(
 		'LayerI'=>array('coef'=>12,'slotlen'=>4),
 		'LayerII'=>array('coef'=>144,'slotlen'=>1),
@@ -72,7 +72,7 @@
 		'LayerIII'=>array('coef'=>72,'slotlen'=>1)
 	)
 );
-/* @phpstan-ignore-line */ /** @psalm-suppress InvalidScope */ $this->LookFrameLen['MPEG2.5']=$this->LookFrameLen['MPEG2'];
+/* @phpstan-ignore-line */ /** @psalm-suppress InvalidScope */ /** @psalm-suppress InvalidScope */ $this->LookFrameLen['MPEG2.5']=$this->LookFrameLen['MPEG2'];
 
 /* @phpstan-ignore-line */ $this->LookHeaderFlags=array(
 	2=>array(	

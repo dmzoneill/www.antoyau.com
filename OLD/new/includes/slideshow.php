@@ -13,7 +13,7 @@ $imgs = array();
 	}
 	sort($imgs);
 	
-	/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ if(!$imageid){
+	/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ /** @psalm-suppress UndefinedGlobalVariable */ if(!$imageid){
 	
 	$matrix = 3;
 	$total = 0;

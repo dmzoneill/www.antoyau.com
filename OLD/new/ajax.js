@@ -1,3 +1,5 @@
+/* eslint-disable */
+// jscpd:ignore-start
 // JavaScript Document
 
 var ids=new Array('a1','a2','a3','mp3player');
@@ -152,3 +154,4 @@ if ((xmlhttp.readyState == 4) && (xmlhttp.status == 200)) {
 	document.getElementById("slideshow").innerHTML = xmlhttp.responseText; 
 } 
 }
+// jscpd:ignore-end

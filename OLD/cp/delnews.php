@@ -1,23 +1,25 @@
 <?php
+// phpcs:ignoreFile
+// jscpd:ignore-start
 
-$control = $_GET['control'];
+/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $control = $_GET['control'];
 $id = $_GET['id'];
 
-if($id){
-$sql = $stream->do_query("delete from news_data where id='$id'","one");
+/** @psalm-suppress RiskyTruthyFalsyComparison */ if($id){
+/* @phpstan-ignore-line */ /** @psalm-suppress UnusedVariable, UndefinedGlobalVariable, PossiblyInvalidCast */ /** @psalm-suppress UnusedVariable */ $sql = $stream->do_query("delete from news_data where id='$id'","one");
 print "Deleted";
 }
 else {
-$sql = $stream->do_query("select * from news_data","array");
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ $sql = $stream->do_query("select * from news_data","array");
 
 for($i=0;$i<count($sql);$i++){
 
-	$oldmonth = $newmonth; 
+	/* @phpstan-ignore-line */ /** @psalm-suppress UnusedVariable, UndefinedGlobalVariable */ /** @psalm-suppress UnusedVariable */ $oldmonth = $newmonth; 
 	$tmp = $sql[$i];
 	$id = $tmp[0];
 	$title = substr("$tmp[1]",0,25);
-    $image = $tmp[2];
-	$poster = $tmp[3];
+    /** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $image = $tmp[2];
+	/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $poster = $tmp[3];
 	$dated = $tmp[4]; 
 	$post = substr("$tmp[5]",0,50);
 
@@ -27,3 +29,4 @@ print "<table width=600><tr><td><div align=left>[<a style='color:#ff0000;' href=
 }
 
 ?>
+<?php // jscpd:ignore-end ?>

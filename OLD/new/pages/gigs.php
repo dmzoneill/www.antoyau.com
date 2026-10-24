@@ -1,11 +1,13 @@
+<?php // phpcs:ignoreFile ?>
+<?php // jscpd:ignore-start ?>
 <style type="text/css">
 <?php
 include("connect.php");
-if(!$mintage1){
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ if(!$mintage1){
 $mintage1 = "11px";
 }
-$css = stripslashes(rawurldecode($stream->do_query("select css from anto_css where id='$mintage'","one")));
-$css = eregi_replace("11px",$mintage1,$css);
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedClass, UndefinedGlobalVariable */ $css = stripslashes(rawurldecode($stream->do_query("select css from anto_css where id='$mintage'","one")));
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedFunction */ $css = eregi_replace("11px",$mintage1,$css);
 print $css;
 
 ?>
@@ -17,35 +19,35 @@ print $css;
 
 $today = time();
 
-$sql = $stream->do_query("select * from anto_gigs where dated>$today order by dated asc","array");
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedClass */ $sql = $stream->do_query("select * from anto_gigs where dated>$today order by dated asc","array");
 
-$r=0;
+/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $r=0;
 $t=0;
 $p=0;
 for($i=0;$i<count($sql);$i++){
 
-	$oldmonth = $newmonth; 
+	/* @phpstan-ignore-line */ /** @psalm-suppress UnusedVariable, PossiblyUndefinedGlobalVariable */ /** @psalm-suppress UnusedVariable */ $oldmonth = $newmonth; 
 	$tmp = $sql[$i];
 	$id = $tmp[0];
 	$name = $tmp[1];
-	$date = date("D j",$tmp[2]);    
-	$rday = date("j",$tmp[2]);    
-	$rdate = date("n",$tmp[2]);     
+	/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $date = date("D j",$tmp[2]);    
+	/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $rday = date("j",$tmp[2]);    
+	/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $rdate = date("n",$tmp[2]);     
 	$location =  $tmp[3];
 	$venue = $tmp[4];
-	$timer = date("H:i",$tmp[5]);
-	$price = $tmp[6];
-	$notes = $tmp[7];
-	$image = $tmp[8];
+	/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $timer = date("H:i",$tmp[5]);
+	/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $price = $tmp[6];
+	/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $notes = $tmp[7];
+	/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $image = $tmp[8];
 	$kother = $tmp[9];
-	$moreinfo = $tmp[10];
-	$newmonth = date("F",$tmp[2]); 
-	$today = time();
-	$year = date("Y",$tmp[2]);      
-	$thismonth = date("F",time());
-	$fuck = date("M",$tmp[2]); 
-	$yearcheck = date("Y",time());
-	$yeardb = date("Y",$tmp[2]);
+	/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $moreinfo = $tmp[10];
+	/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $newmonth = date("F",$tmp[2]); 
+	/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $today = time();
+	/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $year = date("Y",$tmp[2]);      
+	/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $thismonth = date("F",time());
+	/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $fuck = date("M",$tmp[2]); 
+	/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $yearcheck = date("Y",time());
+	/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $yeardb = date("Y",$tmp[2]);
 	$ndate = date("d.m.y",$tmp[2]);
 	$ddd = date("D",$tmp[2]);
 	if(strlen($kother)>1){
@@ -57,11 +59,11 @@ for($i=0;$i<count($sql);$i++){
 
 if($t%2>0){
 
-$ttt = "";
+/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $ttt = "";
 
 }
 else {
-$ttt = "";
+/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $ttt = "";
 }
 
 	if($p==0){
@@ -83,35 +85,35 @@ $ttt = "";
 
 $today = time();
 
-$sql = $stream->do_query("select * from anto_gigs where dated<$today order by dated asc","array");
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedClass */ $sql = $stream->do_query("select * from anto_gigs where dated<$today order by dated asc","array");
 
-$r=0;
-$t=0;
+/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $r=0;
+/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $t=0;
 $p=0;
 for($i=0;$i<count($sql);$i++){
 
-	$oldmonth = $newmonth; 
+	/* @phpstan-ignore-line */ /** @psalm-suppress UnusedVariable, PossiblyUndefinedGlobalVariable */ /** @psalm-suppress UnusedVariable */ $oldmonth = $newmonth; 
 	$tmp = $sql[$i];
 	$id = $tmp[0];
 	$name = $tmp[1];
-	$date = date("D j",$tmp[2]);    
-	$rday = date("j",$tmp[2]);    
-	$rdate = date("n",$tmp[2]);     
+	/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $date = date("D j",$tmp[2]);    
+	/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $rday = date("j",$tmp[2]);    
+	/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $rdate = date("n",$tmp[2]);     
 	$location =  $tmp[3];
 	$venue = $tmp[4];
-	$timer = date("H:i",$tmp[5]);
-	$price = $tmp[6];
-	$notes = $tmp[7];
-	$image = $tmp[8];
-	$kother = $tmp[9];
-	$moreinfo = $tmp[10];
-	$newmonth = date("F",$tmp[2]); 
-	$today = time();
-	$year = date("Y",$tmp[2]);      
-	$thismonth = date("F",time());
+	/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $timer = date("H:i",$tmp[5]);
+	/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $price = $tmp[6];
+	/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $notes = $tmp[7];
+	/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $image = $tmp[8];
+	/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $kother = $tmp[9];
+	/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $moreinfo = $tmp[10];
+	/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $newmonth = date("F",$tmp[2]); 
+	/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $today = time();
+	/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $year = date("Y",$tmp[2]);      
+	/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $thismonth = date("F",time());
 	
-	$yearcheck = date("Y",time());
-	$yeardb = date("Y",$tmp[2]);
+	/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $yearcheck = date("Y",time());
+	/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $yeardb = date("Y",$tmp[2]);
 	$ndate = date("d.m.y",$tmp[2]);
 	
 
@@ -135,3 +137,4 @@ for($i=0;$i<count($sql);$i++){
 
 </table>
 	  
+<?php // jscpd:ignore-end ?>

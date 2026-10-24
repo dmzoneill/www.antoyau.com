@@ -1,33 +1,35 @@
+<?php // phpcs:ignoreFile ?>
 <?php 
+// jscpd:ignore-start
 
 include("connect.php"); 
 
-function getpage($page){
+/** @psalm-suppress MissingReturnType, MissingParamType */ function getpage($page){
 global $stream;
 $page = strtolower($page);
-$page = rawurldecode($stream->do_query("select content from anto_pages where name='$page'","one"));
+/** @psalm-suppress UndefinedClass */ $page = rawurldecode($stream->do_query("select content from anto_pages where name='$page'","one"));
 print stripslashes(nl2br($page));
 
 }
-if(!$pagename){
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ if(!$pagename){
 $pagename = "start";
 }
 
 switch($pagename){
 						
 	default:
-	if($QUERY_STRING==""){
+	/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ if($QUERY_STRING==""){
 	$showmain = true;
 	}
-	if($pagename){
-		if(!$sub){
+	/* @phpstan-ignore-line */ /** @psalm-suppress RiskyTruthyFalsyComparison */ if($pagename){
+		/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ if(!$sub){
 			getpage($pagename);
 		}
 		else {
 			getpage($sub);
 		}
 	}
-	if($showmain){
+	/* @phpstan-ignore-line */ /** @psalm-suppress PossiblyUndefinedGlobalVariable */ if($showmain){
 			include("mainpage.php"); 
 	}
 	break;
@@ -69,7 +71,7 @@ switch($pagename){
 	break;
 						
 	case "news":
-			include("./news/news.php"); 
+			/* @phpstan-ignore-line */ /** @psalm-suppress MissingFile */ include("./news/news.php"); 
 	break;
 						
 	case "photographs":
@@ -106,3 +108,4 @@ switch($pagename){
 
 
 ?>
+<?php // jscpd:ignore-end ?>

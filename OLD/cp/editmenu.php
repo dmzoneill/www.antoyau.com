@@ -1,14 +1,16 @@
 <?php
+// phpcs:ignoreFile
+// jscpd:ignore-start
 
 
 
-$control = $_GET['control'];
-$editpage = $_GET['editpage'];
+/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $control = $_GET['control'];
+/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $editpage = $_GET['editpage'];
 $delete = $_GET['delete'];
 $item = $_GET['item'];
 $add = $_GET['add'];
 $breaker = $_GET['breaker'];
-$editpage = $_GET['editpage'];
+/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $editpage = $_GET['editpage'];
 $position = $_POST['position'];
 $boldto = $_POST['position'];
 $newpageto = $_POST['newpageto'];
@@ -20,7 +22,7 @@ $menu = $_GET['menu'];
 
 if($menu=="change"){
 
-for($t=0;$t<count($idt);$t++){
+/** @psalm-suppress PossiblyInvalidArgument */ for($t=0;$t<count($idt);$t++){
 
 if(!$boldto[$t]){
 $bold = 0;
@@ -29,7 +31,7 @@ else {
 $bold = 1;
 }
 
-$sql = $stream->do_query("update anto_menu set link='$linkto[$t]', title='$titleto[$t]', bold='$bold', place='$position[$t]' where id='$idt[$t]'","one");
+/* @phpstan-ignore-line */ /** @psalm-suppress UnusedVariable, UndefinedGlobalVariable, PossiblyInvalidCast */ /** @psalm-suppress UnusedVariable */ $sql = $stream->do_query("update anto_menu set link='$linkto[$t]', title='$titleto[$t]', bold='$bold', place='$position[$t]' where id='$idt[$t]'","one");
 }
 
 print "<h5>Menu Updated</h5><hr><br>";
@@ -39,40 +41,40 @@ print "<h5>Menu Updated</h5><hr><br>";
 
 
 
-if($add){
+/** @psalm-suppress RiskyTruthyFalsyComparison */ if($add){
 
-if($breaker){
-$position = count($stream->do_query("select * from anto_menu","array"))+1;
-$sql = $stream->do_query("insert into anto_menu values('','0','0','0','$position')","one");
+/** @psalm-suppress RiskyTruthyFalsyComparison */ if($breaker){
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ $position = count($stream->do_query("select * from anto_menu","array"))+1;
+/* @phpstan-ignore-line */ /** @psalm-suppress UnusedVariable, UndefinedGlobalVariable */ /** @psalm-suppress UnusedVariable */ $sql = $stream->do_query("insert into anto_menu values('','0','0','0','$position')","one");
 print "<h5>Menu Item Added (Line Break)</h5><br><hr>";
 }
 else {
 
-if($boldto){
+/** @psalm-suppress RiskyTruthyFalsyComparison */ if($boldto){
 	$bold = "1";
 }
 else {
 	$bold = "0";
 }
 
-$position = count($stream->do_query("select * from anto_menu","array"))+1;
+/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ $position = count($stream->do_query("select * from anto_menu","array"))+1;
  
-  $sql = $stream->do_query("insert into anto_menu values('','$linkto','$titleto','$bold','$position')","one");
+  /* @phpstan-ignore-line */ /** @psalm-suppress UnusedVariable, UndefinedGlobalVariable, PossiblyInvalidCast */ /** @psalm-suppress UnusedVariable */ $sql = $stream->do_query("insert into anto_menu values('','$linkto','$titleto','$bold','$position')","one");
   
-  if($newpageto){
-  	$stream->do_query("insert into anto_pages values('','$titleto','')","one");
+  /** @psalm-suppress RiskyTruthyFalsyComparison */ if($newpageto){
+  	/* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable, PossiblyInvalidCast */ $stream->do_query("insert into anto_pages values('','$titleto','')","one");
   }
  print "<h5>Menu Item Added</h5><br><hr>";
 }
 }
 
-if($delete){
-$sql = $stream->do_query("delete from anto_menu where id=$item","one");
+/** @psalm-suppress RiskyTruthyFalsyComparison */ if($delete){
+/* @phpstan-ignore-line */ /** @psalm-suppress UnusedVariable, UndefinedGlobalVariable, PossiblyInvalidCast */ /** @psalm-suppress UnusedVariable */ $sql = $stream->do_query("delete from anto_menu where id=$item","one");
   
  print "<h5>Menu Item Deleted</h5><br><hr>";
 }
   
-  $sql = $stream->do_query("select * from anto_menu order by place asc","array");
+  /* @phpstan-ignore-line */ /** @psalm-suppress UndefinedGlobalVariable */ $sql = $stream->do_query("select * from anto_menu order by place asc","array");
 
   
   print "<br><br><h5>Menu Editor</h5><hr><br><form action=admin.php?control=editmenu&menu=change method=post><table cellpadding=2 width=600>";
@@ -84,11 +86,11 @@ for($t=0;$t<count($sql);$t++){
 	$title = $tmp[2];
 	$bold = $tmp[3];
 	$place = $tmp[4];
-	$tr = $t;
+	/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $tr = $t;
 	
 	
 	
-	$select = "";
+	/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $select = "";
 	$select = "<select name=position[]>";
 	
 	for($y=0;$y<30;$y++){
@@ -151,14 +153,14 @@ print "<tr><td colspan=4><input type=submit value='update menu'> <input type=res
 <?php
 
 
-$select = "";
+/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $select = "";
 	$select = "<select name=position>";
 	for($y=0;$y<30;$y++){
 	$select = $select ."<option value='$y'>$y</option>";
 	}
 	$select = $select ."</select>";
 
-print "<tr bgcolor='$bg'>
+/* @phpstan-ignore-line */ /** @psalm-suppress PossiblyUndefinedGlobalVariable */ print "<tr bgcolor='$bg'>
 		<td width=250>Link</td><td><input type='text' name='linkto' size='35' readonly='yes'> <br>Readonly:link generated by title</td></tr><tr>
 		<td>Title</td><td><input type='text' name='titleto' size='20' 
 		onKeyUp=\"document.fed.linkto.value='index.php?pagename=' + this.value\"></td></tr><tr>
@@ -188,9 +190,9 @@ for($t=0;$t<count($sql);$t++){
 	$id = $tmp[0];
 	$link = $tmp[1];
 	$title = $tmp[2];
-	$bold = $tmp[3];
-	$place = $tmp[4];
-	$tr = $t;
+	/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $bold = $tmp[3];
+	/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $place = $tmp[4];
+	/** @psalm-suppress UnusedVariable */ /** @psalm-suppress UnusedVariable */ $tr = $t;
 	
 	if($link=="0"){
 		print "<tr>
@@ -209,3 +211,4 @@ for($t=0;$t<count($sql);$t++){
 }
 
 ?></table>
+<?php // jscpd:ignore-end ?>

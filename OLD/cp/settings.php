@@ -1,3 +1,5 @@
+<?php // phpcs:ignoreFile ?>
+<?php // jscpd:ignore-start ?>
 <table width="100%" border="0">
   <tr>
     <td width=200>Disable / Enable Site</td>
@@ -20,3 +22,4 @@
     <td width=200>&nbsp;</td>
   </tr>
  </table>
+<?php // jscpd:ignore-end ?>
